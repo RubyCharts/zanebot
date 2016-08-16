@@ -4,7 +4,7 @@ It's kind of a piece of crap but it mostly works, put it in a bash loop because 
 
 Copy config.js.dist to config.js and add your token and people to follow.
 
-
+    npm install
     while :; do node ./bot.js ; sleep 1; done
 
 

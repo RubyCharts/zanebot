@@ -1,0 +1,10 @@
+module.exports = {
+    token: (function() { throw new Error("need to specify a slack token"); })(),
+    name: "cjdbot",
+    channel: "cjd-bot",
+    follow: [
+        "slacknation",
+        "zanetackett",
+        "jbaylina"
+    ]
+};

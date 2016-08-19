@@ -4,12 +4,14 @@ const Connector = require('./redditconnector');
 
 const bot = new Slackbots({
     token: Config.token,
-    name: 'cjdbot'
+    name: Config.name
 });
 bot.on('start', () => {
-    config.follow.forEach((person) => {
-        Connector.trackRedditUser('zanetackett', (msg) => {
-            bot.postMessageToChannel(config.channel, person + ': ' + msg);
+    setTimeout(() => {
+        Connector.trackUsers(Config.follow, (msg) => {
+            const date = new Date(msg.time).toUTCString().split(' ')[4].replace(/:[0-9]+$/, '');
+            const body = msg.body.replace(/\n/g, ' ');
+            bot.postMessageToChannel(Config.channel, '<' + msg.url + '|' + date + '> <' + msg.from + '> ' + body);
         });
     });
 });

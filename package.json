@@ -3,6 +3,7 @@
     "description": "Slack bot for tracking messages from one or more users of reddit",
     "version": "0.0.0",
     "dependencies": {
-        "slackbots": ""
+        "slackbots": "",
+        "setrandinterval": ""
     }
 }
